@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import AchievementScene from "./AchievementScene";
+import dynamic from "next/dynamic";
+
+const AchievementScene = dynamic(() => import("./AchievementScene"), {
+  ssr: false,
+  loading: () => null,
+});
 
 interface Achievement {
   title: string;

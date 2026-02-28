@@ -2,7 +2,12 @@
 
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import ExperienceScene from "./ExperienceScene";
+import dynamic from "next/dynamic";
+
+const ExperienceScene = dynamic(() => import("./ExperienceScene"), {
+  ssr: false,
+  loading: () => null,
+});
 
 interface ExperienceItem {
   title: string;

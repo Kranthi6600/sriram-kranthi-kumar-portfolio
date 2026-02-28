@@ -2,8 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import SkillsScene from "./SkillsScene";
+import dynamic from "next/dynamic";
 import SkillExploreModal from "./SkillExploreModal";
+import SkillsShimmer from "../ui/SkillsShimmer";
+
+const SkillsScene = dynamic(() => import("./SkillsScene"), {
+  ssr: false,
+  loading: () => <SkillsShimmer />,
+});
 
 interface Skill {
   name: string;
@@ -64,7 +70,8 @@ export default function SkillsSection() {
       icon: "🛠️",
       color: "#7F3AA1",
       skills: [
-        { name: "Git & GitHub", level: 30, category: "Tools" },
+        { name: "Git", level: 85, category: "Tools" },
+        { name: "GitHub", level: 90, category: "Tools" },
         { name: "VS Code", level: 30, category: "Tools" },
         { name: "Figma", level: 0, category: "Tools" },
         { name: "Bootstrap", level: 60, category: "Tools" },

@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, memo } from "react";
 import Image from "next/image";
 import profile from '../../../public/Profile.jpg'
 
-export default function Hero() {
+const Hero = memo(function HeroSection() {
     const nameRef = useRef<HTMLSpanElement>(null);
     const cursorRef = useRef<HTMLSpanElement>(null);
     const heroRef = useRef<HTMLDivElement>(null);
@@ -127,4 +127,6 @@ export default function Hero() {
             </div>
         </div>
     );
-}
+});
+
+export default Hero;

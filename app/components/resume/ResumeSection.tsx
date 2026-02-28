@@ -2,7 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import ResumeScene from "./ResumeScene";
+import dynamic from "next/dynamic";
+
+const ResumeScene = dynamic(() => import("./ResumeScene"), {
+  ssr: false,
+  loading: () => null,
+});
 
 interface ResumeSection {
   title: string;

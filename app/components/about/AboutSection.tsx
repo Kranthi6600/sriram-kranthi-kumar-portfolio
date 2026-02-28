@@ -1,9 +1,15 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import AboutScene from "./AboutScene";
+import React from "react";
+import dynamic from "next/dynamic";
 
-export default function AboutSection() {
+const AboutScene = dynamic(() => import("./AboutScene"), {
+  ssr: false,
+  loading: () => null,
+});
+
+export default React.memo(function AboutSection() {
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -182,4 +188,4 @@ export default function AboutSection() {
       </div>
     </section>
   );
-}
+});
