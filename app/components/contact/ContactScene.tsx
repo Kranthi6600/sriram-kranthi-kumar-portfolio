@@ -124,7 +124,6 @@ export default function ContactScene() {
       <Canvas 
         camera={{ position: [0, 0, 6], fov: 45 }} 
         dpr={[1, 1.5]} 
-        frameloop="demand"
         gl={{ antialias: true, alpha: true }}
       >
         <ambientLight intensity={0.4} />
