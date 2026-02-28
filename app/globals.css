@@ -131,6 +131,102 @@ html {
   cursor: text;
 }
 
+/* Global GPU Optimization */
+* {
+  backface-visibility: hidden;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Contact Section Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-container {
+  animation: fadeInUp 0.6s ease-out forwards;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.contact-left {
+  animation: fadeInLeft 0.8s ease-out 0.2s both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.contact-right {
+  animation: fadeInRight 0.8s ease-out 0.4s both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.contact-text {
+  animation: fadeInUp 0.7s ease-out 0.3s both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.contact-badge {
+  animation: fadeInUp 0.7s ease-out 0.1s both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.contact-form {
+  animation: fadeInUp 0.8s ease-out 0.5s both;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+.animate-fadeIn {
+  animation: fadeInUp 0.5s ease-out;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
 /* Mobile Performance Optimizations */
 @media (max-width: 768px) {
   .email-hover .email-text {
@@ -166,6 +262,28 @@ html {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+  }
+  
+  /* Disable heavy effects on mobile */
+  .mobile-no-blur {
+    backdrop-filter: none !important;
+  }
+  
+  .mobile-light-shadow {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1) !important;
+  }
+  
+  /* Contact section mobile optimizations */
+  .contact-container,
+  .contact-left,
+  .contact-right,
+  .contact-text,
+  .contact-badge,
+  .contact-form,
+  .animate-fadeIn {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
   
   .profile-image {

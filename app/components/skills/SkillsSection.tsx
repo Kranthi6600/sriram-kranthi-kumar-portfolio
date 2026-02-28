@@ -135,7 +135,7 @@ export default function SkillsSection() {
     <section className="px-4 md:px-6 mt-8">
       <div
         ref={rootRef}
-        className="relative max-w-6xl mx-auto p-8 md:p-10 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)] overflow-hidden"
+        className="relative max-w-6xl mx-auto p-8 md:p-10 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg mobile-no-blur border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)] overflow-hidden"
       >
         <SkillsScene />
 
@@ -191,7 +191,7 @@ export default function SkillsSection() {
             {filteredSkills.map((skill, index) => (
               <div
                 key={`${skill.name}-${index}`}
-                className="p-5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md hover:bg-white/15 transition-all duration-300 group cursor-pointer"
+                className="p-5 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur hover:bg-white/15 transition-all duration-300 group cursor-pointer"
                 style={{ animation: `fadeInUp 0.8s ease-out ${0.4 + index * 0.1}s both` }}
                 onClick={() => {
                   setSelectedSkill(skill.name);
@@ -239,19 +239,19 @@ export default function SkillsSection() {
 
           {/* Stats Summary */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.8s both' }}>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#b65ff8]">15+</div>
               <div className="text-sm text-white/70">Technologies</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#5416b5]">4</div>
               <div className="text-sm text-white/70">Categories</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#977DFF]">2+</div>
               <div className="text-sm text-white/70">Years Learning</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#7F3AA1]">Full-Stack</div>
               <div className="text-sm text-white/70">Focus</div>
             </div>

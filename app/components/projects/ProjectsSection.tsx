@@ -231,7 +231,7 @@ export default function ProjectsSection() {
     <section className="px-4 md:px-6 mt-8">
       <div
         ref={rootRef}
-        className="relative max-w-6xl mx-auto p-8 md:p-10 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)] overflow-hidden"
+        className="relative max-w-6xl mx-auto p-8 md:p-10 bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg mobile-no-blur border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)] mobile-light-shadow overflow-hidden"
       >
         <ProjectScene />
 
@@ -263,7 +263,7 @@ export default function ProjectsSection() {
               {featuredProjects.map((project, index) => (
                 <div
                   key={project.id}
-                  className="group relative p-6 rounded-xl bg-gradient-to-br from-white/15 to-white/5 border border-white/20 backdrop-blur-md hover:from-white/20 hover:to-white/10 transition-all duration-300 featured-card"
+                  className="group relative p-6 rounded-xl bg-gradient-to-br from-white/15 to-white/5 border border-white/20 backdrop-blur-md mobile-no-blur mobile-no-blur hover:from-white/20 hover:to-white/10 transition-all duration-300 featured-card"
                   style={{
                     animationDelay: `${index * 0.15}s`
                   }}
@@ -376,7 +376,7 @@ export default function ProjectsSection() {
               {filteredProjects.map((project, index) => (
               <div
                 key={project.id}
-                className="group p-6 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md hover:bg-white/15 transition-all duration-300 project-card"
+                className="group p-6 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur mobile-no-blur hover:bg-white/15 transition-all duration-300 project-card"
                 style={{
                   animationDelay: `${index * 0.1}s`
                 }}
@@ -436,19 +436,19 @@ export default function ProjectsSection() {
 
           {/* Stats Summary */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12" style={{ animation: 'fadeInUp 0.8s ease-out 0.8s both' }}>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#b65ff8]">14+</div>
               <div className="text-sm text-white/70">Total Projects</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#7A85C1]">5</div>
               <div className="text-sm text-white/70">Featured</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#977DFF]">2</div>
               <div className="text-sm text-white/70">In Development</div>
             </div>
-            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md">
+            <div className="text-center p-4 rounded-xl bg-white/10 border border-white/15 backdrop-blur-md mobile-no-blur">
               <div className="text-2xl font-bold text-[#7F3AA1]">Live</div>
               <div className="text-sm text-white/70">Demos</div>
             </div>
@@ -463,7 +463,7 @@ export default function ProjectsSection() {
               {projects.filter(p => p.underDevelopment).map((project, index) => (
                 <div
                   key={project.id}
-                  className="group relative p-6 rounded-xl bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/20 backdrop-blur-md hover:from-orange-500/20 hover:to-yellow-500/10 transition-all duration-300"
+                  className="group relative p-6 rounded-xl bg-gradient-to-br from-orange-500/10 to-yellow-500/5 border border-orange-500/20 backdrop-blur-md mobile-no-blur hover:from-orange-500/20 hover:to-yellow-500/10 transition-all duration-300"
                   style={{
                     animationDelay: `${index * 0.2}s`
                   }}

@@ -67,7 +67,7 @@ export default function Hero() {
     };
 
     return (
-        <div className="flex flex-col md:flex-row gap-4 sm:gap-5 p-6 sm:p-8 w-full max-w-6xl mx-auto bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)]" ref={heroRef}>
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-5 p-6 sm:p-8 w-full max-w-6xl mx-auto bg-gradient-to-br from-white/10 via-white/5 to-transparent backdrop-blur-lg mobile-no-blur border border-white/20 rounded-2xl shadow-[0_8px_32px_rgba(0,0,0,0.1),0_4px_16px_rgba(0,0,0,0.05)] mobile-light-shadow" ref={heroRef}>
             <div className="flex flex-col gap-3 md:w-1/2 text-center md:text-left">
                 <h1 className="text-4xl sm:text-4xl md:text-5xl font-bold">
                     Hei, I'm{" "}
@@ -121,7 +121,7 @@ export default function Hero() {
 
             <div className="md:w-1/2 flex justify-center items-center">
                 {/* Example: your profile image or illustration */}
-                <div className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 bg-purple-200 rounded-full profile-image border-4 border-[#6E49B4] shadow-[0_0_20px_rgba(84,22,181,0.6),0_0_50px_rgba(84,22,181,0.4),0_0_70px_rgba(84,22,181,0.2)]">
+                <div className="w-48 h-48 sm:w-60 sm:h-60 md:w-72 md:h-72 bg-purple-200 rounded-full profile-image border-4 border-[#6E49B4] shadow-[0_0_20px_rgba(84,22,181,0.6),0_0_50px_rgba(84,22,181,0.4),0_0_70px_rgba(84,22,181,0.2)] mobile-light-shadow">
                     <Image src={profile} alt="Profile" width={288} height={288} className="w-full h-full object-cover rounded-full" />
                 </div>
             </div>
