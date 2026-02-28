@@ -280,13 +280,6 @@ html {
     transform: none !important;
   }
   
-  /* Disable only old slide animations on mobile */
-  .slide-in,
-  .slide-up,
-  .slide-down,
-  .slide-left,
-  .slide-right,
-  .slideInLeft,
   .slideInRight,
   .slideInUp,
   .slideInDown {
