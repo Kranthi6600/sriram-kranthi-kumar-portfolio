@@ -143,12 +143,11 @@ export default function ProjectsSection() {
       id: 1,
       title: "Portfolio Website",
       description: "A stunning frontend portfolio website with React, Next.js, Three.js, GSAP animations, and glassmorphism design. Features interactive 3D backgrounds, smooth animations, and professional transitions.",
-      liveUrl: "#",
+      liveUrl: "https://sriram-kranthi-kumar.vercel.app/",
       githubUrl: "https://github.com/Kranthi6600/portfolio",
       technologies: ["React", "Next.js", "Three.js", "GSAP", "TailwindCSS"],
       category: "frontend",
-      featured: true,
-      underDevelopment: true
+      featured: true
     },
     {
       id: 2,
