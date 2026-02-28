@@ -67,6 +67,16 @@ export default function ResumeSection() {
       .skill-tag {
         animation: slideInLeft 0.5s ease-out both;
       }
+      
+      /* Disable slide animations on mobile */
+      @media (max-width: 768px) {
+        .resume-card,
+        .skill-tag {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
     `;
     document.head.appendChild(style);
     

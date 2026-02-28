@@ -60,6 +60,16 @@ export default function ExperienceSection() {
       .tech-tag {
         animation: slideInLeft 0.5s ease-out both;
       }
+      
+      /* Disable slide animations on mobile */
+      @media (max-width: 768px) {
+        .experience-card,
+        .tech-tag {
+          animation: none !important;
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      }
     `;
     document.head.appendChild(style);
     
