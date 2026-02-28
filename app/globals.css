@@ -274,19 +274,13 @@ html {
   }
   
   /* Contact section mobile optimizations */
-  .contact-container,
-  .contact-left,
-  .contact-right,
-  .contact-text,
-  .contact-badge,
-  .contact-form,
   .animate-fadeIn {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
   }
   
-  /* Disable all slide animations on mobile */
+  /* Disable only old slide animations on mobile */
   .slide-in,
   .slide-up,
   .slide-down,
@@ -295,12 +289,7 @@ html {
   .slideInLeft,
   .slideInRight,
   .slideInUp,
-  .slideInDown,
-  [class*="slide"],
-  [class*="slide-in"],
-  [class*="slide-up"],
-  [class*="slide-left"],
-  [class*="slide-right"] {
+  .slideInDown {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
