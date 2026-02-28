@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
-import ContactShimmer from "../ui/ContactShimmer";
+import SkeletonCard from "../ui/SkeletonCard";
 
 const ContactScene = dynamic(() => import("./ContactScene"), {
   ssr: false,
-  loading: () => <ContactShimmer />,
+  loading: () => <SkeletonCard />,
 });
 
 export default function ContactSection() {

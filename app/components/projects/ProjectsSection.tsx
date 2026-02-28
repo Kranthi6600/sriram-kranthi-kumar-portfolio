@@ -142,11 +142,11 @@ export default function ProjectsSection() {
     {
       id: 1,
       title: "Portfolio Website",
-      description: "A stunning full-stack portfolio website with React, Next.js, Three.js, GSAP animations, and glassmorphism design. Features interactive 3D backgrounds, smooth animations, and professional transitions.",
+      description: "A stunning frontend portfolio website with React, Next.js, Three.js, GSAP animations, and glassmorphism design. Features interactive 3D backgrounds, smooth animations, and professional transitions.",
       liveUrl: "#",
       githubUrl: "https://github.com/Kranthi6600/portfolio",
       technologies: ["React", "Next.js", "Three.js", "GSAP", "TailwindCSS"],
-      category: "fullstack",
+      category: "frontend",
       featured: true,
       underDevelopment: true
     },

@@ -4,11 +4,11 @@ import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import dynamic from "next/dynamic";
 import SkillExploreModal from "./SkillExploreModal";
-import SkillsShimmer from "../ui/SkillsShimmer";
+import SkeletonCard from "../ui/SkeletonCard";
 
 const SkillsScene = dynamic(() => import("./SkillsScene"), {
   ssr: false,
-  loading: () => <SkillsShimmer />,
+  loading: () => <SkeletonCard />,
 });
 
 interface Skill {
