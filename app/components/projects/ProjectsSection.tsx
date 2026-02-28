@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { gsap } from "gsap";
 import dynamic from "next/dynamic";
 import LazySection from "../LazySection";
 
@@ -143,7 +142,7 @@ export default function ProjectsSection() {
     {
       id: 1,
       title: "Portfolio Website",
-      description: "A stunning full-stack portfolio website with React, Next.js, Three.js animations, and glassmorphism design. Features interactive 3D backgrounds and smooth animations.",
+      description: "A stunning full-stack portfolio website with React, Next.js, Three.js, GSAP animations, and glassmorphism design. Features interactive 3D backgrounds, smooth animations, and professional transitions.",
       liveUrl: "#",
       githubUrl: "https://github.com/Kranthi6600/portfolio",
       technologies: ["React", "Next.js", "Three.js", "GSAP", "TailwindCSS"],
