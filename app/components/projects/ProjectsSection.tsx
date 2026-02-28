@@ -52,13 +52,84 @@ export default function ProjectsSection() {
         }
       }
       
-      /* Prevent animations on hover */
-      .project-card {
-        animation: fadeInUp 0.6s ease-out both;
+      @keyframes slideInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeInLeft {
+        from {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      
+      @keyframes blurIn {
+        from {
+          filter: blur(10px);
+          opacity: 0;
+        }
+        to {
+          filter: blur(0);
+          opacity: 1;
+        }
       }
       
       .featured-card {
         animation: fadeInUp 0.6s ease-out both;
+      }
+      
+      .project-card {
+        animation: slideInLeft 0.5s ease-out both;
+      }
+      
+      /* Add About section style animations on mobile */
+      @media (max-width: 768px) {
+        .projects-container {
+          animation: blurIn 0.6s ease-out forwards;
+        }
+        
+        .projects-left {
+          animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .projects-right {
+          animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+        
+        .projects-text {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        
+        .projects-badge {
+          animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
+        
+        .featured-card,
+        .project-card {
+          animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
       }
     `;
     document.head.appendChild(style);

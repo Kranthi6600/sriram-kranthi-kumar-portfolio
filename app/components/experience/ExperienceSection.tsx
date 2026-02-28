@@ -69,6 +69,27 @@ export default function ExperienceSection() {
           opacity: 1 !important;
           transform: none !important;
         }
+        
+        /* Add About section style animations on mobile */
+        .experience-container {
+          animation: blurIn 0.6s ease-out forwards;
+        }
+        
+        .experience-left {
+          animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .experience-right {
+          animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+        
+        .experience-text {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        
+        .experience-badge {
+          animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
       }
     `;
     document.head.appendChild(style);

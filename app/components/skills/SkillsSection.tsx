@@ -117,6 +117,33 @@ export default function SkillsSection() {
       .skill-bar-fill {
         animation: skillBarFill 1s ease-out both;
       }
+      
+      /* Add About section style animations on mobile */
+      @media (max-width: 768px) {
+        .skills-container {
+          animation: blurIn 0.6s ease-out forwards;
+        }
+        
+        .skills-left {
+          animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .skills-right {
+          animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+        
+        .skills-text {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        
+        .skills-badge {
+          animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
+        
+        .skill-bar-fill {
+          animation: fadeInUp 0.8s ease-out 0.5s both, skillBarFill 1s ease-out both;
+        }
+      }
     `;
     document.head.appendChild(style);
     

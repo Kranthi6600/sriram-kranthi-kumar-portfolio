@@ -114,6 +114,37 @@ export default function AchievementsSection() {
       .stats-card:nth-child(2) { animation-delay: 0.9s; }
       .stats-card:nth-child(3) { animation-delay: 1.0s; }
       .stats-card:nth-child(4) { animation-delay: 1.1s; }
+      
+      /* Add About section style animations on mobile */
+      @media (max-width: 768px) {
+        .achievements-container {
+          animation: blurIn 0.6s ease-out forwards;
+        }
+        
+        .achievements-left {
+          animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .achievements-right {
+          animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+        
+        .achievements-text {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        
+        .achievements-badge {
+          animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
+        
+        .achievement-card {
+          animation: fadeInUp 0.8s ease-out 0.5s both;
+        }
+        
+        .stats-card {
+          animation: fadeInUp 0.8s ease-out 0.8s both;
+        }
+      }
     `;
     document.head.appendChild(style);
     

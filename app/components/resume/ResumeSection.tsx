@@ -76,6 +76,27 @@ export default function ResumeSection() {
           opacity: 1 !important;
           transform: none !important;
         }
+        
+        /* Add About section style animations on mobile */
+        .resume-container {
+          animation: blurIn 0.6s ease-out forwards;
+        }
+        
+        .resume-left {
+          animation: fadeInLeft 0.8s ease-out 0.2s both;
+        }
+        
+        .resume-right {
+          animation: fadeInRight 0.8s ease-out 0.4s both;
+        }
+        
+        .resume-text {
+          animation: fadeInUp 0.7s ease-out 0.3s both;
+        }
+        
+        .resume-badge {
+          animation: fadeInUp 0.7s ease-out 0.1s both;
+        }
       }
     `;
     document.head.appendChild(style);
