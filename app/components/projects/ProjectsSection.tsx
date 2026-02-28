@@ -144,7 +144,7 @@ export default function ProjectsSection() {
       title: "Portfolio Website",
       description: "A stunning frontend portfolio website with React, Next.js, Three.js, GSAP animations, and glassmorphism design. Features interactive 3D backgrounds, smooth animations, and professional transitions.",
       liveUrl: "https://sriram-kranthi-kumar.vercel.app/",
-      githubUrl: "https://github.com/Kranthi6600/portfolio",
+      githubUrl: "https://github.com/Kranthi6600/sriram-kranthi-kumar-portfolio",
       technologies: ["React", "Next.js", "Three.js", "GSAP", "TailwindCSS"],
       category: "frontend",
       featured: true
@@ -201,15 +201,6 @@ export default function ProjectsSection() {
       liveUrl: "https://kranthi6600.github.io/User-Dashboard/",
       technologies: ["HTML", "CSS", "JavaScript", "Charts", "Dashboard UI"],
       category: "frontend",
-      featured: false
-    },
-    {
-      id: 8,
-      title: "Speech to Text",
-      description: "Voice recognition application that converts speech to text in real-time. Features multiple language support and text export functionality.",
-      liveUrl: "https://kranthi6600.github.io/Speech-to-Text/",
-      technologies: ["HTML", "CSS", "JavaScript", "Web Speech API", "Text Processing"],
-      category: "utility",
       featured: false
     },
     {
@@ -273,15 +264,39 @@ export default function ProjectsSection() {
   ];
 
   // Remove debug log and simplify filtering
-  const featuredProjects = projects.filter(p => p.featured);
+  const featuredProjects = projects.filter(p => p.featured && !p.underDevelopment);
   const filteredProjects = activeFilter === "all" 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
+    ? projects.filter(project => !project.underDevelopment)
+    : projects.filter(project => project.category === activeFilter && !project.underDevelopment);
 
   // Add simple CSS-based animations only
   useEffect(() => {
     // No GSAP - just ensure component is mounted
   }, []);
+
+  const handleShareProject = async (project: Project) => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: project.title,
+          text: project.description,
+          url: project.liveUrl !== "#" ? project.liveUrl : window.location.href
+        });
+      } catch (error) {
+        // User cancelled or error occurred
+        console.log('Share cancelled or failed:', error);
+      }
+    } else {
+      // Fallback: Copy to clipboard
+      const shareText = `${project.title}\n${project.description}\n${project.liveUrl !== "#" ? project.liveUrl : window.location.href}`;
+      try {
+        await navigator.clipboard.writeText(shareText);
+        alert('Project details copied to clipboard!');
+      } catch (error) {
+        console.error('Failed to copy:', error);
+      }
+    }
+  };
 
   const getCategoryColor = (category: string) => {
     switch (category) {
@@ -381,6 +396,15 @@ export default function ProjectsSection() {
                         GitHub
                       </a>
                     )}
+                    <button
+                      onClick={() => handleShareProject(project)}
+                      className="px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center"
+                      title="Share project"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                      </svg>
+                    </button>
                   </div>
                 </div>
               ))}
@@ -495,6 +519,15 @@ export default function ProjectsSection() {
                       GitHub
                     </a>
                   )}
+                  <button
+                    onClick={() => handleShareProject(project)}
+                    className="px-3 py-2 bg-white/10 hover:bg-white/20 text-white text-sm font-medium rounded-lg transition-colors flex items-center justify-center"
+                    title="Share project"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z" />
+                    </svg>
+                  </button>
                 </div>
               </div>
             ))}
