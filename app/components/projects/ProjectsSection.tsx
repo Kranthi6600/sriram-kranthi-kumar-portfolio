@@ -231,15 +231,6 @@ export default function ProjectsSection() {
       featured: false
     },
     {
-      id: 11,
-      title: "Blood Donation Portal",
-      description: "A comprehensive blood donation platform connecting donors with recipients. Features donor registration, blood bank management, and emergency requests. Successfully processed 500+ donor registrations with 99.9% uptime and 40% faster response times.",
-      liveUrl: "https://kranthi6600.github.io/BLOOD-DONATION-PORTAL/",
-      technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Forms"],
-      category: "frontend",
-      featured: true
-    },
-    {
       id: 12,
       title: "Click&Cart Ecommerce",
       description: "A modern ecommerce platform with product catalog, shopping cart, user authentication, and payment integration. Built with Next.js, MySQL, and TailwindCSS for optimal performance.",
