@@ -266,7 +266,7 @@ export default function ProjectsSection() {
       description: "Comprehensive blood donation platform currently being enhanced. Will feature donor registration, blood bank management, emergency requests, and real-time availability tracking.",
       liveUrl: "#",
       technologies: ["React", "Node.js", "MongoDB", "Authentication", "Real-time Updates"],
-      category: "fullstack",
+      category: "learning",
       featured: false,
       underDevelopment: true
     }
