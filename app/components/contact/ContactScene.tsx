@@ -2,7 +2,7 @@
 
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Float } from "@react-three/drei";
-import { useMemo, useRef, useEffect } from "react";
+import { useMemo, useRef, useEffect, useState } from "react";
 import type { Mesh } from "three";
 
 export default function ContactScene() {
@@ -120,9 +120,41 @@ function ContactText() {
 }
 
 export default function ContactScene() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, []);
+
+  // Don't render 3D scene on mobile - it's too heavy
+  if (isMobile) {
+    return (
+      <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl flex items-center justify-center bg-gradient-to-br from-white/10 to-white/5">
+        <div className="text-center text-white/80">
+          <div className="text-2xl mb-4">📧</div>
+          <div className="text-lg font-medium">Contact form optimized for mobile</div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="absolute inset-0 -z-10 overflow-hidden rounded-2xl">
-      <Canvas camera={{ position: [0, 0, 6], fov: 45 }} dpr={[1, 1.5]} gl={{ antialias: true, alpha: true }}>
+      <Canvas 
+        camera={{ position: [0, 0, 6], fov: 45 }} 
+        dpr={[1, 1.5]} 
+        frameloop="demand"
+        gl={{ antialias: true, alpha: true }}
+      >
         <ambientLight intensity={0.4} />
         <pointLight position={[4, 3, 4]} intensity={1.2} color="#b65ff8" />
         <pointLight position={[-4, -3, 3]} intensity={0.8} color="#5416b5" />

@@ -2,7 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-import ProjectScene from "./ProjectsScene";
+import dynamic from "next/dynamic";
+import LazySection from "../LazySection";
+
+const ProjectScene = dynamic(() => import("./ProjectsScene"), {
+  ssr: false,
+  loading: () => null,
+});
 
 interface Project {
   id: number;

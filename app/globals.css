@@ -322,10 +322,37 @@ html {
 @media (prefers-reduced-motion: reduce) {
   .text-animate,
   .profile-image,
-  .cursor {
+  .cursor,
+  .contact-container,
+  .contact-left,
+  .contact-right,
+  .contact-text,
+  .contact-badge,
+  .contact-form,
+  .animate-fadeIn,
+  .slide-in,
+  .slide-up,
+  .slide-down,
+  .slide-left,
+  .slide-right,
+  .slideInLeft,
+  .slideInRight,
+  .slideInUp,
+  .slideInDown,
+  [class*="animate"],
+  [class*="slide"],
+  [class*="fade"],
+  [data-animate],
+  .card,
+  .section,
+  .container,
+  .hover-card,
+  .glass-card,
+  .backdrop-card {
     animation: none !important;
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 }
 

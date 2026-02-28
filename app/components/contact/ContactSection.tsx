@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import ContactScene from "./ContactScene";
+import dynamic from "next/dynamic";
+
+const ContactScene = dynamic(() => import("./ContactScene"), {
+  ssr: false,
+  loading: () => null,
+});
 
 export default function ContactSection() {
   const rootRef = useRef<HTMLDivElement>(null);
