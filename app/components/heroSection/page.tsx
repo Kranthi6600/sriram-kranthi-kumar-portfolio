@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import profile from '../../../public/Profile.jpg'
 
@@ -15,155 +15,13 @@ export default function Hero() {
         }
     };
 
-    useLayoutEffect(() => {
-        if (!nameRef.current || !cursorRef.current || !heroRef.current) return;
-
-        // Check if styles already exist to prevent recreation
-        const existingStyle = document.getElementById('hero-animations');
-        if (existingStyle) return;
+    useEffect(() => {
+        if (!nameRef.current || !cursorRef.current) return;
 
         // Detect mobile for performance optimization
         const isMobile = window.innerWidth < 768;
         const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4;
-
-        // Add CSS animations with mobile optimizations
-        const style = document.createElement('style');
-        style.id = 'hero-animations';
-        style.textContent = `
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateX(-50px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateX(0);
-                }
-            }
-            
-            @keyframes profileImage {
-                from {
-                    clip-path: circle(0% at 50% 50%);
-                    scale: 0.8;
-                    opacity: 0;
-                }
-                to {
-                    clip-path: circle(75% at 50% 50%);
-                    scale: 1;
-                    opacity: 1;
-                }
-            }
-            
-            @keyframes blink {
-                0%, 50% { opacity: 1; }
-                51%, 100% { opacity: 0; }
-            }
-            
-            @keyframes typing {
-                from { width: 0; }
-                to { width: 100%; }
-            }
-            
-            .text-animate {
-                animation: fadeInUp 0.8s ease-out forwards;
-                will-change: opacity, transform;
-            }
-            
-            .text-animate:nth-child(1) { animation-delay: 0.1s; }
-            .text-animate:nth-child(2) { animation-delay: 0.2s; }
-            .text-animate:nth-child(3) { animation-delay: 0.3s; }
-            
-            .profile-image {
-                animation: profileImage 2.5s ease-out 0.3s forwards;
-                will-change: clip-path, scale, opacity;
-            }
-            
-            .cursor {
-              display: inline;
-              animation: blink 1s infinite;
-              color: #977DFF;
-              will-change: opacity;
-            }
-            
-            .typing-text {
-                overflow: hidden;
-                white-space: nowrap;
-                display: inline;
-                max-width: 100%;
-                will-change: width;
-            }
-            
-            .email-hover {
-                position: relative;
-                display: inline-flex;
-                align-items: center;
-                overflow: hidden;
-            }
-            
-            .email-hover .email-text {
-                position: absolute;
-                left: 0;
-                top: 100%;
-                margin-top: 6px;
-                opacity: 0;
-                transform: translateY(-5px);
-                transition: all 0.3s ease;
-                white-space: normal;
-                max-width: 200px;
-                font-size: 14px;
-                color: white;
-                pointer-events: auto;
-                user-select: text;
-                -webkit-user-select: text;
-                -moz-user-select: text;
-                -ms-user-select: text;
-                cursor: text;
-            }
-            
-            @media (max-width: 768px) {
-                .email-hover .email-text {
-                    display: none;
-                }
-                
-                /* Mobile performance optimizations */
-                .text-animate {
-                    animation-duration: 0.6s;
-                    transform: translateZ(0);
-                    backface-visibility: hidden;
-                }
-                
-                .profile-image {
-                    animation-duration: 2s;
-                    transform: translateZ(0);
-                    backface-visibility: hidden;
-                }
-                
-                .cursor {
-                    animation-duration: 1.2s;
-                }
-            }
-            
-            @media (prefers-reduced-motion: reduce) {
-                .text-animate,
-                .profile-image,
-                .cursor {
-                    animation: none !important;
-                    opacity: 1 !important;
-                    transform: none !important;
-                }
-            }
-            
-            .email-hover:hover .email-text {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            
-            .email-hover:hover svg {
-                transform: scale(1.1);
-            }
-        `;
-        document.head.appendChild(style);
-
+        
         // Typing animation with mobile-optimized performance
         const fullName = "Kranthi";
         let currentIndex = 0;
@@ -200,11 +58,6 @@ export default function Hero() {
             // Clear timeout to prevent memory leaks
             if (animationTimeout) {
                 clearTimeout(animationTimeout);
-            }
-            // Only remove style if this is the last instance
-            const styleElement = document.getElementById('hero-animations');
-            if (styleElement && document.querySelectorAll('[data-hero-component]').length <= 1) {
-                document.head.removeChild(styleElement);
             }
         };
     }, []);
