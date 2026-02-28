@@ -143,6 +143,31 @@ html {
     backface-visibility: hidden;
   }
   
+  /* Remove only card slide animations on mobile */
+  .card-animate,
+  .slide-in,
+  .slide-up,
+  .slide-down,
+  .slide-left,
+  .slide-right,
+  .hover-card,
+  .glass-card,
+  .backdrop-card {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  /* Generic card animations */
+  [class*="card"],
+  [class*="slide"] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
   .profile-image {
     animation-duration: 2s;
     transform: translateZ(0);
