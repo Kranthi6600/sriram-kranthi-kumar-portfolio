@@ -439,7 +439,7 @@ export default function ResumeSection() {
           <div className="text-center mt-8" style={{ animation: 'fadeInUp 0.8s ease-out 0.6s both' }}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://drive.google.com/file/d/19dhR3r4uIxn_1AFEF03qA5ssE4zcWxWP/view"
+                href="https://drive.google.com/file/d/1iPyOd7SH7PH-tGR2__WeoD0JLvktKLaN/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg transition-all duration-200 border border-white/20 hover:border-white/30"
@@ -448,11 +448,10 @@ export default function ResumeSection() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
-                Preview Resume
+                View Resume
               </a>
               <a
-                href="https://drive.google.com/uc?export=download&id=19dhR3r4uIxn_1AFEF03qA5ssE4zcWxWP"
-                download="Sriram_Kranthi_Kumar_Resume.pdf"
+                href="https://drive.google.com/file/d/1iPyOd7SH7PH-tGR2__WeoD0JLvktKLaN/view?usp=sharing"
                 className="inline-flex items-center gap-2 px-6 py-3 bg-[#5416b5] hover:bg-[#6a1fe0] text-white font-medium rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl transform hover:scale-105"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
